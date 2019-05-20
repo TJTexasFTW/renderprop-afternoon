@@ -1,5 +1,6 @@
 {
-  "name": "hoc-afternoon",
+  // "name": "hoc-afternoon",
+  "name": "renderprop-afternoon",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
