@@ -1,4 +1,4 @@
-import React from 'react';
+import React , {Component} from 'react';
 
 class Currency extends Component {
     state = {
@@ -7,7 +7,7 @@ class Currency extends Component {
         amount: 0
     };
     
-    handleAmountIncrease () => {
+    handleAmountIncrease = () => {
         this.setState((prevState) => {
             return {
                 amount: prevState.amount + 1
@@ -75,10 +75,18 @@ class Currency extends Component {
                     <button className='add' onClick={this.handleAmountIncrease}>+</button>
                     <button className='minus' onClick={this.handleAmountDecrease}>-</button>
                 </div>
-                    {this.props.render(
+                    {/* {this.props.render(
                         currencyData[this.state.selectedCurrency],
                         this.state.amount
-                    )}
+                    )} */}
+                    				{this.state.currencyChosen ? (
+					this.props.render(
+						currencyData[this.state.selectedCurrency],
+						this.state.amount
+					)
+				) : (
+					<p>Please Select Currency</p>
+				)}
             </div>
         ) 
     }
